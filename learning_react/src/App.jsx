@@ -1,17 +1,30 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
+import Crd from './components/Crd.jsx'
+import ThemeButton from './components/ThemeButton.jsx'
+import { ThemeProvider,Themecontext } from './context/Theme'
 
 function App() {
-  const [count, setCount] = useState(0)
-  const clicked = () => {
-    setCount(count + 1)
+
+  const [themeMode, setThemeMode] = useState("light");
+  const lightTheme = () => {
+    setThemeMode("light");
   }
+  const darkTheme = () => {
+    setThemeMode("dark");
+  }
+  // useEffect(() => {
+  //   document.querySelector('html').classList.remove('light', 'dark')
+  //   document.querySelector('html').classList.add(themeMode)
+  // }, [themeMode])
+
   return (
-    <>
-      <h1 className="text-3xl font-bold text-red-600 bg-green-400 rounded-lg">
-        Hello world!
-      </h1>
-    </>
+    <ThemeProvider value={{ themeMode, lightTheme, darkTheme }}>
+      <div>
+      <ThemeButton/>
+       <Crd/>
+      </div>
+    </ThemeProvider>
   )
 }
 

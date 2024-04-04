@@ -1,12 +1,14 @@
 import { useState } from 'react'
-import './App.css'
+import Component1 from './componenet/Component1.jsx'
+import Component2 from './componenet/Component2.jsx'
+import Component3 from './componenet/Component3.jsx'
 
 function App() {
   const [color, setcolor] = useState('')
 
   return (
     <>
-      <div className={`${color}  justify-center bottom-12  w-full h-96 duration-500`}>
+      {/* <div className={`${color}  justify-center bottom-12  w-full h-96 duration-500`}>
 
       </div>
       <div className='bg-slate-400 rounded-3xl'>
@@ -17,7 +19,7 @@ function App() {
         <button className={`rounded-lg border-2 border-gray p-2 m-5 hover:bg-white bg-blue-500`} onClick={() => { setcolor('bg-blue-500') }} >blue</button>
         <button className={`rounded-lg border-2 border-gray p-2 m-5 hover:bg-white bg-gray-500`} onClick={() => { setcolor('bg-gray-500') }} >gray</button>
         <button className={`rounded-lg border-2 border-gray p-2 m-5 hover:bg-white bg-orange-400`} onClick={() => { setcolor('bg-orange-400') }} >orange</button>
-      </div>
+      </div> */}
 
     </>
   )
